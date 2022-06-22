@@ -1,4 +1,4 @@
-package com.todo.todo.entity.todo.api;
+package com.todo.todo.entity.todo.model;
 
 
 import lombok.*;
