@@ -31,12 +31,12 @@ public class ToDoController implements ToDoAPI {
 
     @Override
     public ToDoModel updateToDoModel(Long todoId, ToDoModel todo) {
-        return null;
+        return toDoService.updateToDoModel(todoId, todo);
     }
 
     @Override
     public String deleteToDoModel(Long todoId) {
-        return null;
+        return toDoService.deleteToDoModel(todoId);
     }
 
 }

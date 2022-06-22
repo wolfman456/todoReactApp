@@ -43,11 +43,20 @@ public class ToDoServiceImpl implements ToDoService {
 
     @Override
     public ToDoModel updateToDoModel(Long todoId, ToDoModel todo) {
-        return null;
+        ToDoModel toDoModel = toDoRepo.findById(todoId).orElseThrow(()->
+                new InformationNotFoundException("no budget with ID " + todoId + " found"));
+        toDoModel.setName(todo.getName());
+        toDoModel.setDescription(todo.getDescription());
+        toDoModel.setCompleted(todo.getCompleted());
+
+        return toDoRepo.save(toDoModel);
     }
 
     @Override
     public String deleteToDoModel(Long todoId) {
-        return null;
+        ToDoModel toDoModel = toDoRepo.findById(todoId).orElseThrow(()->
+                new InformationNotFoundException("no budget with ID " + todoId + " found"));
+        toDoRepo.delete(toDoModel);
+        return "todo " + toDoModel.getName() + " has been deleted";
     }
 }
