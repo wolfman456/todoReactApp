@@ -35,7 +35,7 @@ public class ToDoServiceImpl implements ToDoService {
              ToDoModel todoModel = ToDoModel.builder()
                     .name(todo.getName())
                     .description(todo.getDescription())
-                    .completed(todo.getCompleted())
+                    .status(todo.getStatus())
                     .build();
            return toDoRepo.save(todoModel);
         }
@@ -47,7 +47,7 @@ public class ToDoServiceImpl implements ToDoService {
                 new InformationNotFoundException("no budget with ID " + todoId + " found"));
         toDoModel.setName(todo.getName());
         toDoModel.setDescription(todo.getDescription());
-        toDoModel.setCompleted(todo.getCompleted());
+        toDoModel.setStatus(todo.getStatus());
 
         return toDoRepo.save(toDoModel);
     }

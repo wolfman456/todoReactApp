@@ -23,13 +23,13 @@ public class TodoApplication implements CommandLineRunner {
         ToDoModel toDoModel = ToDoModel.builder()
                 .name("coding")
                 .description("build react todo list")
-                .completed(false)
+                .status("completed")
                 .build();
 
         ToDoModel toDoModel2 = ToDoModel.builder()
                 .name("go to bed")
                 .description("get some sleep")
-                .completed(false).build();
+                .status("not_completed").build();
 
         toDoRepo.save(toDoModel);
         toDoRepo.save(toDoModel2);

@@ -26,6 +26,6 @@ public class ToDoModel {
     String description;
 
     @Column
-    Boolean completed;
+    String status;
 
 }
